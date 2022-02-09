@@ -3,11 +3,10 @@ package org.example;
 import org.quickperf.sql.annotation.ExpectSelect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
 @ContextConfiguration(locations = {"classpath:spring-beans.xml"})
-public class SpringTest extends AbstractTransactionalTestNGSpringContextTests {
+public class SpringTest extends QuickPerfAbstractTransactionalTestNGSpringContextTests {
 
     @Autowired
     private PersonDAO personDao;
