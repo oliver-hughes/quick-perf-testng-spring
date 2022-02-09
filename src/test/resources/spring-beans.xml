@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="realDataSource" class="org.example.TestDataSourceFactory"/>
+
+    <bean id="dataSource" class="org.example.QuickPerfDataSourceFactory"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocations" value="hibernate.cfg.xml"/>
+<!--        <property name="annotatedPackages" value="org.example.entity"/>-->
+    </bean>
+
+    <bean id="personDAO" class="org.example.PersonDAO">
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+
+</beans>

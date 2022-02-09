@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Tests Suite" thread-count="1">
+    <listeners>
+        <listener class-name="org.quickperf.testng.QuickPerfTestNGListener"/>
+    </listeners>
+
+    <test name="quick-perf">
+        <classes>
+            <class name="org.example.HibernateTest"/>
+            <class name="org.example.SpringTest"/>
+<!--            <class name="org.example.EntityManagerTest"/>-->
+        </classes>
+    </test>
+</suite>
