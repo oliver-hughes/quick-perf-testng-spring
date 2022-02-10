@@ -7,7 +7,7 @@ import org.springframework.test.context.testng.AbstractTransactionalTestNGSpring
 import org.testng.annotations.Test;
 
 @ContextConfiguration(locations = {"classpath:spring-beans.xml"})
-public class SpringTest extends AbstractTransactionalTestNGSpringContextTests {
+public class SpringTest extends AbstractTransactionalTestNGSpringContextTests  {
 
     @Autowired
     private PersonDAO personDao;
