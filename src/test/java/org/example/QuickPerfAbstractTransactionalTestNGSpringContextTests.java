@@ -1,8 +1,0 @@
-package org.example;
-
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
-
-@TestExecutionListeners(QuickPerfTestExecutionListener.class)
-public abstract class QuickPerfAbstractTransactionalTestNGSpringContextTests extends AbstractTransactionalTestNGSpringContextTests {
-}
